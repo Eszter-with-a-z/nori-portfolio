@@ -4,6 +4,6 @@ import react from '@astrojs/react';
 
 export default defineConfig({
   integrations: [tailwind(), react()],
-  site: 'https://YOUR_USERNAME.github.io',
+  site: 'https://eszter-with-a-z.github.io',
   base: '/nori-portfolio',
 });
