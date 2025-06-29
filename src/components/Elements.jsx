@@ -33,7 +33,7 @@ export function Card({ children, className, ...props }) {
 }
 
 export function CardHeader({ className, ...props }) {
-  return <div className={cn("flex flex-col space-y-1.5 p-6 pb-0", className)} {...props} />
+  return <div className={cn("font-mono flex flex-col space-y-1.5 p-6 pb-0", className)} {...props} />
 }
 
 export function CardTitle({ className, ...props }) {
@@ -54,4 +54,8 @@ export function CardFooter({ className, ...props }) {
 
 export function CardImage({ className, ...props }){
   return <img className={cn("max-h-screen", className)} {...props} />
+}
+
+export function CardIcon({className, ...props}){
+  return <img className={(cn("inline ", className))} {...props} width="50" />                    
 }

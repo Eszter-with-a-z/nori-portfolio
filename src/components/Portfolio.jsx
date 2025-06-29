@@ -3,15 +3,15 @@
 import { useState, useEffect } from "react"
 import { cn } from "../lib/utils.js"
 import { 
-  Button, Card, CardHeader, CardTitle, CardDescription,  CardContent, CardFooter, CardImage
+  Card, CardHeader, CardTitle, CardContent, CardImage, CardIcon
  } from "./Elements.jsx"
 
 const sections = [
   { id: "about", number: "00", title: "About" },
-  { id: "project-a", number: "01", title: "ÆLTER ÆGO" },
-  { id: "project-b", number: "02", title: "Starshaped" },
-  { id: "project-c", number: "03", title: "Street Photography" },
-  { id: "project-d", number: "04", title: "Tour de LFW" },
+  { id: "project-a", number: "01", iconImg:"public/elemek/elem_2.png", title: "ÆLTER ÆGO" },
+  { id: "project-b", number: "02", iconImg:"public/elemek/elem_3.png",title: "Starshaped" },
+  { id: "project-c", number: "03", iconImg:"public/elemek/elem_4.png",title: "Street Photography" },
+  { id: "project-d", number: "04", iconImg:"public/elemek/elem_5.png",title: "Tour de LFW" },
 ]
 
 
@@ -107,23 +107,19 @@ export default function Portfolio() {
         <div className="flex-1 lg:ml-64">
           <div className="pt-20 lg:pt-0 px-4 lg:px-8">
             {/* Information Section */}
-            <section id="about" className="min-h-screen py-12">
+            <section id="about" className="h-screen my-12">
               <div className="max-w-4xl mx-auto">
-                <div className="mb-8">
-                  <h2 className="text-4xl lg:text-6xl font-bold mb-4">
-                    <span className="font-mono text-muted-foreground">00.</span> About
-                  </h2>
-                </div>
-                <Card className="mb-8">
+                <div >
                   <CardHeader>
-                    <img src="" alt="" />
+                    <img src="public\elemek\elem_27.png" alt="Nora" />
+                    <img src="public\elemek\elem_28.png" alt="Nora" />
                   </CardHeader>
                   <CardContent>
-                    <p className="text-muted-foreground leading-relaxed">
+                    <p className="text-muted-foreground leading-relaxed text-center">
                       ars poetica
                     </p>
                   </CardContent>
-                </Card>
+                </div>
                 <div className="grid md:grid-cols-2 gap-6">
                   <Card>
                     <CardHeader>
@@ -156,11 +152,11 @@ export default function Portfolio() {
             </section>
 
             {/* Project A Section */}
-            <section id="project-a" className="min-h-screen py-12">
+            <section id="project-a" className="min-h-screen my-12">
               <div className="max-w-4xl mx-auto">
-                <div className="mb-8">
-                  <h2 className="text-4xl lg:text-6xl font-bold mb-4">
-                    <span className="font-mono text-muted-foreground">01.</span> 
+                <div>
+                  <h2 className="text-4xl lg:text-6xl font-bold">
+                     <CardIcon src="public\elemek\elem_2.png" alt="" />                    
                     ÆLTER ÆGO
                   </h2>
                 </div>
@@ -174,7 +170,7 @@ export default function Portfolio() {
                     </p>
                     <div className="flex flex-wrap gap-2 mb-6">
                       {["key word", "key word2", "key word3"].map((tech) => (
-                        <span key={tech} className="px-3 py-1 bg-accent text-accent-foreground rounded-full text-sm">
+                        <span key={tech} className="font-mono px-3 py-1 bg-accent text-accent-foreground rounded-full text-sm">
                           {tech}
                         </span>
                       ))}
@@ -185,11 +181,11 @@ export default function Portfolio() {
             </section>
 
             {/* Project B Section */}
-            <section id="project-b" className="min-h-screen py-12 lg:py-20">
+            <section id="project-b" className="min-h-screen my-12">
               <div className="max-w-4xl mx-auto">
-                <div className="mb-8">
-                  <h2 className="text-4xl lg:text-6xl font-bold mb-4">
-                    <span className="font-mono text-muted-foreground">02.</span> 
+                <div>
+                  <h2 className="text-4xl lg:text-6xl font-bold">
+                    <CardIcon src="public\elemek\elem_3.png" alt=""/>
                     Starshaped
                   </h2>
                 </div>
@@ -214,11 +210,11 @@ export default function Portfolio() {
             </section>
 
             {/* Project C Section */}
-            <section id="project-c" className="min-h-screen py-12 lg:py-20">
+            <section id="project-c" className="min-h-screen my-12">
               <div className="max-w-4xl mx-auto">
-                <div className="mb-8">
-                  <h2 className="text-4xl lg:text-6xl font-bold mb-4">
-                    <span className="font-mono text-muted-foreground">03.</span> 
+                <div>
+                  <h2 className="text-4xl lg:text-6xl font-bold">
+                    <CardIcon src="public\elemek\elem_4.png" alt=""/>
                     Street Photography
                   </h2>
                 </div>
@@ -243,11 +239,11 @@ export default function Portfolio() {
             </section>
 
             {/* Project D Section */}
-            <section id="project-d" className="min-h-screen py-12 lg:py-20">
+            <section id="project-d" className="min-h-screen my-12">
               <div className="max-w-4xl mx-auto">
-                <div className="mb-8">
-                  <h2 className="text-4xl lg:text-6xl font-bold mb-4">
-                    <span className="font-mono text-muted-foreground">04.</span> 
+                <div>
+                  <h2 className="text-4xl lg:text-6xl font-bold">
+                    <CardIcon src="public\elemek\elem_5.png" alt=""/>
                     Tour de LFW
                   </h2>
                 </div>
@@ -265,10 +261,6 @@ export default function Portfolio() {
                           {tech}
                         </span>
                       ))}
-                    </div>
-                    <div className="flex gap-4">
-                      <Button>View Live</Button>
-                      <Button variant="outline">View Code</Button>
                     </div>
                   </CardContent>
                 </Card>
