@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react"
 import { cn } from "../lib/utils.js"
 import { 
-  Card, CardHeader, CardTitle, CardContent, CardImage, CardIcon
+  Card, CardHeader, CardTitle, CardContent, CardImage, CardIcon, Carousel
  } from "./Elements.jsx"
 
 const sections = [
@@ -164,8 +164,11 @@ export default function Portfolio() {
                   <Card>
                     <CardContent>
                       <div className="aspect-video bg-muted rounded-lg mb-6 flex items-center justify-center">
-                        <CardImage src="src\images\projects\ÆLTER ÆGO\alterego1.jpg" alt="" />
-
+                        <Carousel 
+                        imagesPath="src/images/projects/ÆLTER ÆGO/"
+                        imageNameFormat="alterego" 
+                        totalImages={11} 
+                        />
                       </div>
                       <p className="text-muted-foreground leading-relaxed mb-6">
                         short description

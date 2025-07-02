@@ -1,4 +1,5 @@
 import { cn } from "../lib/utils.js"
+import { useEffect, useState, useRef } from "react"
 // Elements
 export function Button({ children, variant = "default", size = "default", className, ...props }) {
   return (
@@ -58,4 +59,26 @@ export function CardImage({ className, ...props }){
 
 export function CardIcon({className, ...props}){
   return <img className={(cn("inline ", "h-12", "lg:h-20", className))} {...props} />                    
+}
+
+// Carousel
+export function Carousel({ imagesPath, imageNameFormat, totalImages, interval = 3500 }) {
+  const [index, setIndex] = useState(1)
+ // Change Index at Timer
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setIndex((prevIndex) => (prevIndex % totalImages) + 1)
+    }, interval)
+
+    return () => clearInterval(timer)
+  }, [totalImages, interval])
+
+  
+  const imagePath = `${imagesPath}${imageNameFormat}${index}.jpg`
+
+  return (
+    
+      <CardImage src={imagePath} alt={`ÆLTER ÆGO ${index}`} />
+    
+  )
 }
