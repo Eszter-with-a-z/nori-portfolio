@@ -104,7 +104,7 @@ export default function Portfolio() {
         </div>
 
         {/* Main Content */}
-        <div className="flex-1 lg:ml-64">
+        <div className="flex-1 lg:ml-64 ">
           <div className="pt-20 lg:pt-0 px-4 lg:px-8">
             {/* Information Section */}
             <section id="about" className="h-screen my-12">
@@ -152,31 +152,35 @@ export default function Portfolio() {
             </section>
 
             {/* Project A Section */}
-            <section id="project-a" className="min-h-screen my-12">
+            <section id="project-a" className="min-h-screen justify-end">
               <div className="max-w-4xl mx-auto">
-                <div>
-                  <h2 className="text-4xl lg:text-6xl font-bold">
+                <div className="w-full">
+                  <h2 className="text-4xl lg:text-6xl font-bold  flex flex-row justify-between">
                      <CardIcon src="public\elemek\elem_2.png" alt="" />                    
                     ÆLTER ÆGO
                   </h2>
                 </div>
-                <Card>
-                  <CardContent>
-                    <div className="aspect-video bg-muted rounded-lg mb-6 flex items-center justify-center">
-                      <CardImage src="src\images\projects\ÆLTER ÆGO\alterego1.jpg" alt="" />
-                    </div>
-                    <p className="text-muted-foreground leading-relaxed mb-6">
-                      short description
-                    </p>
-                    <div className="flex flex-wrap gap-2 mb-6">
-                      {["key word", "key word2", "key word3"].map((tech) => (
-                        <span key={tech} className="font-mono px-3 py-1 bg-accent text-accent-foreground rounded-full text-sm">
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-                  </CardContent>
-                </Card>
+                <div className="flex justify-end"> 
+                  <Card>
+                    <CardContent>
+                      <div className="aspect-video bg-muted rounded-lg mb-6 flex items-center justify-center">
+                        <CardImage src="src\images\projects\ÆLTER ÆGO\alterego1.jpg" alt="" />
+
+                      </div>
+                      <p className="text-muted-foreground leading-relaxed mb-6">
+                        short description
+                      </p>
+                      <div className="flex flex-wrap gap-2 mb-6">
+                        {["key word", "key word2", "key word3"].map((tech) => (
+                          <span key={tech} className="font-mono px-3 py-1 bg-accent text-accent-foreground rounded-full text-sm">
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+                    </CardContent>
+                  </Card>
+                </div>
+                
               </div>
             </section>
 

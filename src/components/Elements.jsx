@@ -26,7 +26,7 @@ export function Button({ children, variant = "default", size = "default", classN
 
 export function Card({ children, className, ...props }) {
   return (
-    <div className={cn("rounded-lg border bg-card text-card-foreground shadow-sm", className)} {...props}>
+    <div className={cn("w-fit rounded-lg border bg-card text-card-foreground shadow-sm", className)} {...props}>
       {children}
     </div>
   )
@@ -53,9 +53,9 @@ export function CardFooter({ className, ...props }) {
 }
 
 export function CardImage({ className, ...props }){
-  return <img className={cn("max-h-screen", className)} {...props} />
+  return <img className={cn("max-h-screen mr-0", className)} {...props} />
 }
 
 export function CardIcon({className, ...props}){
-  return <img className={(cn("inline ", className))} {...props} width="50" />                    
+  return <img className={(cn("inline ", "h-12", "lg:h-20", className))} {...props} />                    
 }
