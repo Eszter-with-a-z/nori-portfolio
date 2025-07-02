@@ -64,21 +64,92 @@ export function CardIcon({className, ...props}){
 // Carousel
 export function Carousel({ imagesPath, imageNameFormat, totalImages, interval = 3500 }) {
   const [index, setIndex] = useState(1)
- // Change Index at Timer
+  const touchStartX = useRef(null)
+
+  // Auto-advance
   useEffect(() => {
     const timer = setInterval(() => {
-      setIndex((prevIndex) => (prevIndex % totalImages) + 1)
+      nextIndex();
     }, interval)
-
     return () => clearInterval(timer)
-  }, [totalImages, interval])
+  }, [index])
 
+  // Arrow key navigation
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === "ArrowLeft") prevIndex()
+      else if (e.key === "ArrowRight") nextIndex()
+    }
+
+    window.addEventListener("keydown", handleKeyDown)
+    return () => window.removeEventListener("keydown", handleKeyDown)
+  }, [])
+
+  // Update Index for next image
+  const nextIndex = () => {
+    setIndex((prev) => (prev % totalImages) + 1)
+  }
+
+  const prevIndex = () => {
+    setIndex((prev) => (prev - 1 + totalImages - 1) % totalImages + 1)
+  }
+
+  const handleDotClick = (dotIndex) => {
+    setIndex(dotIndex)
+  }
+
+  const handleTouchEnd = (e) => {
+    const touchEndX = e.changedTouches[0].clientX
+    const diff = touchStartX.current - touchEndX
+
+    if (Math.abs(diff) > 50) {
+      if (diff > 0) nextIndex()
+      else prevIndex()
+    }
+  }
+
+  // Swipe support
+  const handleTouchStart = (e) => {
+    touchStartX.current = e.touches[0].clientX
+  }
+
+    const handleClick = (e) => {
+    const rect = e.currentTarget.getBoundingClientRect()
+    const clickX = e.clientX - rect.left
+    const width = rect.width
+
+    if (clickX < width * 0.2) {
+      prevIndex()
+    } else if (clickX > width * 0.8) {
+      nextIndex()
+    }
+  }
   
+
   const imagePath = `${imagesPath}${imageNameFormat}${index}.jpg`
 
   return (
     
+    <div
+      className="relative w-full aspect-video bg-muted rounded-lg flex items-center justify-center"
+      onTouchStart={handleTouchStart}
+      onTouchEnd={handleTouchEnd}
+      onClick={handleClick}
+    >
       <CardImage src={imagePath} alt={`ÆLTER ÆGO ${index}`} />
-    
-  )
+
+      {/* Dots */}
+      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
+        {Array.from({ length: totalImages }, (_, i) => (
+          <button
+            key={i}
+            onClick={() => handleDotClick(i + 1)}
+            className={`h-2 w-2 rounded-full ${
+              i + 1 === index ? "bg-foreground" : "bg-muted-foreground/50"
+            }`}
+          />
+        ))}
+      </div>
+    </div>
+  )  
 }
