@@ -62,9 +62,18 @@ export function CardIcon({className, ...props}){
 }
 
 // Carousel
-export function Carousel({ imagesPath, imageNameFormat, totalImages, interval = 3500 }) {
+export function Carousel({ imagesPath, imageNameFormat, totalImages, interval = 3500 , format='jpg'}) {
   const [index, setIndex] = useState(1)
   const touchStartX = useRef(null)
+
+  // Update Index for next image
+  const nextIndex = () => {
+    setIndex((prev) => (prev % totalImages) + 1)
+  }
+
+  const prevIndex = () => {
+    setIndex((prev) => (prev - 1 + totalImages - 1) % totalImages + 1)
+  }
 
   // Auto-advance
   useEffect(() => {
@@ -84,15 +93,6 @@ export function Carousel({ imagesPath, imageNameFormat, totalImages, interval = 
     window.addEventListener("keydown", handleKeyDown)
     return () => window.removeEventListener("keydown", handleKeyDown)
   }, [])
-
-  // Update Index for next image
-  const nextIndex = () => {
-    setIndex((prev) => (prev % totalImages) + 1)
-  }
-
-  const prevIndex = () => {
-    setIndex((prev) => (prev - 1 + totalImages - 1) % totalImages + 1)
-  }
 
   const handleDotClick = (dotIndex) => {
     setIndex(dotIndex)
@@ -126,7 +126,7 @@ export function Carousel({ imagesPath, imageNameFormat, totalImages, interval = 
   }
   
 
-  const imagePath = `${imagesPath}${imageNameFormat}${index}.jpg`
+  const imagePath = `${imagesPath}${imageNameFormat}${index}.${format}`
 
   return (
     

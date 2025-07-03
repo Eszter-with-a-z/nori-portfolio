@@ -199,7 +199,11 @@ export default function Portfolio() {
                 <Card>
                   <CardContent>
                     <div className="aspect-video bg-muted rounded-lg mb-6 flex items-center justify-center">
-                      <CardImage src="src\images\projects\starshaped\starshaped1.jpg" alt="" />
+                      <Carousel 
+                      imagesPath="src/images/projects/starshaped/"
+                      imageNameFormat="starshaped" 
+                      totalImages={7} 
+                      />                      
                     </div>
                     <p className="text-muted-foreground leading-relaxed mb-6">
                      xx
@@ -228,7 +232,11 @@ export default function Portfolio() {
                 <Card>
                   <CardContent>
                     <div className="aspect-video bg-muted rounded-lg mb-6 flex items-center justify-center">
-                      <CardImage src="src\images\projects\street photography\street_photo_0.jpg másolata.jpg" />
+                      <Carousel 
+                      imagesPath="src/images/projects/street_photography/"
+                      imageNameFormat="street_photo_" 
+                      totalImages={15}
+                      />
                     </div>
                     <p className="text-muted-foreground leading-relaxed mb-6">
                       xx
@@ -257,7 +265,12 @@ export default function Portfolio() {
                 <Card>
                   <CardContent>
                     <div className="aspect-video bg-muted rounded-lg mb-6 flex items-center justify-center">
-                      <CardImage src="nori-portfolio\src\images\projects\tour de LFW\tour_de_LFW_1.jpeg" />
+                     <Carousel 
+                      imagesPath="src/images/projects/tour_de_LFW/"
+                      imageNameFormat="tour_de_LFW_" 
+                      totalImages={22}
+                      format='jpeg'
+                      /> 
                     </div>
                     <p className="text-muted-foreground leading-relaxed mb-6">
                       xxx
