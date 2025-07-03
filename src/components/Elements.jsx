@@ -131,7 +131,7 @@ export function Carousel({ imagesPath, imageNameFormat, totalImages, interval = 
   return (
     
     <div
-      className="relative w-full aspect-video bg-muted rounded-lg flex items-center justify-center"
+      className="relative w-full max-h-screen  aspect-video bg-muted rounded-lg flex items-center justify-center"
       onTouchStart={handleTouchStart}
       onTouchEnd={handleTouchEnd}
       onClick={handleClick}
