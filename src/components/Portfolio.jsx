@@ -155,7 +155,7 @@ export default function Portfolio() {
             <section id="project-a" className="min-h-screen justify-end">
               <div className="max-w-4xl mx-auto">
                 <div className="w-full">
-                  <h2 className="text-4xl lg:text-6xl font-bold  flex flex-row justify-between">
+                  <h2 className="text-4xl lg:text-6xl font-bold flex flex-row justify-between">
                      <CardIcon src="public\elemek\elem_2.png" alt="" />                    
                     ÆLTER ÆGO
                   </h2>
@@ -188,102 +188,108 @@ export default function Portfolio() {
             </section>
 
             {/* Project B Section */}
-            <section id="project-b" className="min-h-screen my-12">
+            <section id="project-b" className="min-h-screen jusftify-end">
               <div className="max-w-4xl mx-auto">
-                <div>
-                  <h2 className="text-4xl lg:text-6xl font-bold">
+                <div className="w-full">
+                  <h2 className="text-4xl lg:text-6xl font-bold flex flex-row justify-between">
                     <CardIcon src="public\elemek\elem_3.png" alt=""/>
                     Starshaped
                   </h2>
                 </div>
-                <Card>
-                  <CardContent>
-                    <div className="aspect-video bg-muted rounded-lg mb-6 flex items-center justify-center">
-                      <Carousel 
-                      imagesPath="src/images/projects/starshaped/"
-                      imageNameFormat="starshaped" 
-                      totalImages={7} 
-                      />                      
-                    </div>
-                    <p className="text-muted-foreground leading-relaxed mb-6">
-                     xx
-                    </p>
-                    <div className="flex flex-wrap gap-2 mb-6">
-                      {["keyword", "keyword2", "keyword3"].map((tech) => (
-                        <span key={tech} className="px-3 py-1 bg-accent text-accent-foreground rounded-full text-sm">
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-                  </CardContent>
-                </Card>
+                <div className="flex justify-end">
+                  <Card>
+                    <CardContent>
+                      <div className="aspect-video bg-muted rounded-lg mb-6 flex items-center justify-center">
+                        <Carousel 
+                        imagesPath="src/images/projects/starshaped/"
+                        imageNameFormat="starshaped" 
+                        totalImages={7} 
+                        />                      
+                      </div>
+                      <p className="text-muted-foreground leading-relaxed mb-6">
+                      xx
+                      </p>
+                      <div className="flex flex-wrap gap-2 mb-6">
+                        {["keyword", "keyword2", "keyword3"].map((tech) => (
+                          <span key={tech} className="px-3 py-1 bg-accent text-accent-foreground rounded-full text-sm">
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+                    </CardContent>
+                  </Card>
+                </div>
               </div>
             </section>
 
             {/* Project C Section */}
-            <section id="project-c" className="min-h-screen my-12">
+            <section id="project-c" className="min-h-screenjusftify">
               <div className="max-w-4xl mx-auto">
-                <div>
-                  <h2 className="text-4xl lg:text-6xl font-bold">
+                <div className="w-full">
+                  <h2 className="text-4xl lg:text-6xl font-bold flex flex-row justify-between">
                     <CardIcon src="public\elemek\elem_4.png" alt=""/>
                     Street Photography
                   </h2>
                 </div>
-                <Card>
-                  <CardContent>
-                    <div className="aspect-video bg-muted rounded-lg mb-6 flex items-center justify-center">
-                      <Carousel 
-                      imagesPath="src/images/projects/street_photography/"
-                      imageNameFormat="street_photo_" 
-                      totalImages={15}
-                      />
-                    </div>
-                    <p className="text-muted-foreground leading-relaxed mb-6">
-                      xx
-                    </p>
-                    <div className="flex flex-wrap gap-2 mb-6">
-                      {["keyword", "keyword2", "keyword3"].map((tech) => (
-                        <span key={tech} className="px-3 py-1 bg-accent text-accent-foreground rounded-full text-sm">
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-                  </CardContent>
-                </Card>
+                <div className="flex justify-end">
+                  <Card>
+                    <CardContent>
+                      <div className="aspect-video bg-muted rounded-lg mb-6 flex items-center justify-center">
+                        <Carousel 
+                        imagesPath="src/images/projects/street_photography/"
+                        imageNameFormat="street_photo_" 
+                        totalImages={15}
+                        />
+                      </div>
+                      <p className="text-muted-foreground leading-relaxed mb-6">
+                        xx
+                      </p>
+                      <div className="flex flex-wrap gap-2 mb-6">
+                        {["keyword", "keyword2", "keyword3"].map((tech) => (
+                          <span key={tech} className="px-3 py-1 bg-accent text-accent-foreground rounded-full text-sm">
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+                    </CardContent>
+                  </Card>
+                </div>
               </div>
             </section>
 
             {/* Project D Section */}
-            <section id="project-d" className="min-h-screen my-12">
+            <section id="project-d" className="min-h-screenjustify-end">
               <div className="max-w-4xl mx-auto">
-                <div>
-                  <h2 className="text-4xl lg:text-6xl font-bold">
+                <div className="w-full">
+                  <h2 className="text-4xl lg:text-6xl font-bold flex flex-row justify-between">
                     <CardIcon src="public\elemek\elem_5.png" alt=""/>
                     Tour de LFW
                   </h2>
                 </div>
-                <Card>
-                  <CardContent>
-                    <div className="aspect-video bg-muted rounded-lg mb-6 flex items-center justify-center">
-                     <Carousel 
-                      imagesPath="src/images/projects/tour_de_LFW/"
-                      imageNameFormat="tour_de_LFW_" 
-                      totalImages={22}
-                      format='jpeg'
-                      /> 
-                    </div>
-                    <p className="text-muted-foreground leading-relaxed mb-6">
-                      xxx
-                    </p>
-                    <div className="flex flex-wrap gap-2 mb-6">
-                      {["kérdés", "kérdés2", "kérdés3"].map((tech) => (
-                        <span key={tech} className="px-3 py-1 bg-accent text-accent-foreground rounded-full text-sm">
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-                  </CardContent>
-                </Card>
+                <div className="flex justify-end">
+                  <Card>
+                    <CardContent>
+                      <div className="aspect-video bg-muted rounded-lg mb-6 flex items-center justify-center">
+                      <Carousel 
+                        imagesPath="src/images/projects/tour_de_LFW/"
+                        imageNameFormat="tour_de_LFW_" 
+                        totalImages={22}
+                        format='jpeg'
+                        /> 
+                      </div>
+                      <p className="text-muted-foreground leading-relaxed mb-6">
+                        xxx
+                      </p>
+                      <div className="flex flex-wrap gap-2 mb-6">
+                        {["kérdés", "kérdés2", "kérdés3"].map((tech) => (
+                          <span key={tech} className="px-3 py-1 bg-accent text-accent-foreground rounded-full text-sm">
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+                    </CardContent>
+                  </Card>
+                </div>
               </div>
             </section>
           </div>
