@@ -8,10 +8,10 @@ import {
 
 const sections = [
   { id: "about", number: "00", title: "About" },
-  { id: "project-a", number: "01", iconImg:"public/elemek/elem_2.png", title: "ÆLTER ÆGO" },
-  { id: "project-b", number: "02", iconImg:"public/elemek/elem_3.png",title: "Starshaped" },
-  { id: "project-c", number: "03", iconImg:"public/elemek/elem_4.png",title: "Street Photography" },
-  { id: "project-d", number: "04", iconImg:"public/elemek/elem_5.png",title: "Tour de LFW" },
+  { id: "project-a", number: "01", iconImg:"/nori-portfolio/elemek/elem_2.png", title: "ÆLTER ÆGO" },
+  { id: "project-b", number: "02", iconImg:"/nori-portfolio/elemek/elem_3.png",title: "Starshaped" },
+  { id: "project-c", number: "03", iconImg:"/nori-portfolio/elemek/elem_4.png",title: "Street Photography" },
+  { id: "project-d", number: "04", iconImg:"/nori-portfolio/elemek/elem_5.png",title: "Tour de LFW" },
 ]
 
 
@@ -111,8 +111,8 @@ export default function Portfolio() {
               <div className="max-w-4xl mx-auto">
                 <div >
                   <CardHeader>
-                    <img src="public\elemek\elem_27.png" alt="Nora" />
-                    <img src="public\elemek\elem_28.png" alt="Nora" />
+                    <img src="/nori-portfolio/elemek/elem_27.png" alt="Nora" />
+                    <img src="/nori-portfolio/elemek/elem_28.png" alt="Juliannna" />
                   </CardHeader>
                   <CardContent>
                     <p className="text-muted-foreground leading-relaxed text-center">
@@ -156,7 +156,7 @@ export default function Portfolio() {
               <div className="max-w-4xl mx-auto">
                 <div className="w-full">
                   <h2 className="text-4xl lg:text-6xl font-bold flex flex-row justify-between">
-                     <CardIcon src="public\elemek\elem_2.png" alt="" />                    
+                     <CardIcon src="/nori-portfolio/elemek/elem_2.png" alt="" />                    
                     ÆLTER ÆGO
                   </h2>
                 </div>
@@ -165,7 +165,7 @@ export default function Portfolio() {
                     <CardContent>
                       <div className="aspect-video bg-muted rounded-lg mb-6 flex items-center justify-center">
                         <Carousel 
-                        imagesPath="src/images/projects/ÆLTER ÆGO/"
+                        imagesPath="/nori-portfolio/images/projects/alterego/"
                         imageNameFormat="alterego" 
                         totalImages={11} 
                         />
@@ -192,7 +192,7 @@ export default function Portfolio() {
               <div className="max-w-4xl mx-auto">
                 <div className="w-full">
                   <h2 className="text-4xl lg:text-6xl font-bold flex flex-row justify-between">
-                    <CardIcon src="public\elemek\elem_3.png" alt=""/>
+                    <CardIcon src="/nori-portfolio/elemek/elem_3.png" alt=""/>
                     Starshaped
                   </h2>
                 </div>
@@ -201,7 +201,7 @@ export default function Portfolio() {
                     <CardContent>
                       <div className="aspect-video bg-muted rounded-lg mb-6 flex items-center justify-center">
                         <Carousel 
-                        imagesPath="src/images/projects/starshaped/"
+                        imagesPath="/nori-portfolio/images/projects/starshaped/"
                         imageNameFormat="starshaped" 
                         totalImages={7} 
                         />                      
@@ -223,11 +223,11 @@ export default function Portfolio() {
             </section>
 
             {/* Project C Section */}
-            <section id="project-c" className="min-h-screenjusftify">
+            <section id="project-c" className="min-h-screen jusftify-end mb-6">
               <div className="max-w-4xl mx-auto">
                 <div className="w-full">
                   <h2 className="text-4xl lg:text-6xl font-bold flex flex-row justify-between">
-                    <CardIcon src="public\elemek\elem_4.png" alt=""/>
+                    <CardIcon src="/nori-portfolio/elemek/elem_4.png" alt=""/>
                     Street Photography
                   </h2>
                 </div>
@@ -236,7 +236,7 @@ export default function Portfolio() {
                     <CardContent>
                       <div className="aspect-video bg-muted rounded-lg mb-6 flex items-center justify-center">
                         <Carousel 
-                        imagesPath="src/images/projects/street_photography/"
+                        imagesPath="/nori-portfolio/images/projects/street_photography/"
                         imageNameFormat="street_photo_" 
                         totalImages={15}
                         />
@@ -262,7 +262,7 @@ export default function Portfolio() {
               <div className="max-w-4xl mx-auto">
                 <div className="w-full">
                   <h2 className="text-4xl lg:text-6xl font-bold flex flex-row justify-between">
-                    <CardIcon src="public\elemek\elem_5.png" alt=""/>
+                    <CardIcon src="/nori-portfolio/elemek/elem_5.png" alt=""/>
                     Tour de LFW
                   </h2>
                 </div>
@@ -271,7 +271,7 @@ export default function Portfolio() {
                     <CardContent>
                       <div className="aspect-video bg-muted rounded-lg mb-6 flex items-center justify-center">
                       <Carousel 
-                        imagesPath="src/images/projects/tour_de_LFW/"
+                        imagesPath="/nori-portfolio/images/projects/tour_de_LFW/"
                         imageNameFormat="tour_de_LFW_" 
                         totalImages={22}
                         format='jpeg'
