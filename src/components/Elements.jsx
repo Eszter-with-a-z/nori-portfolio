@@ -153,3 +153,42 @@ export function Carousel({ imagesPath, imageNameFormat, totalImages, interval = 
     </div>
   )  
 }
+
+export function ProjectCard({
+  projectId, iconPath, title, imagePath, imageNameFormat, 
+  totalImages, format="jpg",
+  keywords=["key word", "key word2", "key word3"],
+}){
+  return(
+    <section id={projectId} className="min-h-screen justify-end">
+      <div className="max-w-4xl mx-auto">
+        <div className="w-full">
+          <h2 className="text-4xl lg:text-6xl font-bold flex flex-row justify-between">
+              <CardIcon src={iconPath} alt="" />                    
+            {title}
+          </h2>
+        </div>
+        <div className="flex justify-end"> 
+          <Card>
+            <CardContent>
+              <div className="aspect-video bg-muted rounded-lg mb-6 flex items-center justify-center">
+                <Carousel 
+                imagesPath={imagePath}
+                imageNameFormat = {imageNameFormat}
+                totalImages={totalImages} 
+                />
+              </div>
+              <div className="flex flex-wrap gap-2 mb-6">
+                {keywords.map((keyword) => (
+                  <span key={keyword} className="font-mono px-3 py-1 bg-accent text-accent-foreground rounded-full text-sm">
+                    {keyword}
+                  </span>
+                ))}
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+        
+      </div>
+    </section>)
+}

@@ -3,7 +3,9 @@
 import { useState, useEffect } from "react"
 import { cn } from "../lib/utils.js"
 import { 
-  Card, CardHeader, CardTitle, CardContent, CardImage, CardIcon, Carousel
+  Card, CardHeader, CardTitle, CardContent, 
+  CardImage, CardIcon, Carousel,
+  ProjectCard
  } from "./Elements.jsx"
 
 const sections = [
@@ -121,7 +123,7 @@ export default function Portfolio() {
                   </CardContent>
                 </div>
                 <div className="grid md:grid-cols-2 gap-6">
-                  <Card>
+                  <Card className={"w-full"}>
                     <CardHeader>
                       <CardTitle>Skills</CardTitle>
                     </CardHeader>
@@ -135,12 +137,12 @@ export default function Portfolio() {
                       </div>
                     </CardContent>
                   </Card>
-                  <Card>
+                  <Card className={"w-full"}>
                     <CardHeader>
                       <CardTitle>Contact</CardTitle>
                     </CardHeader>
-                    <CardContent>
-                      <div className="space-y-2 text-muted-foreground">
+                    <CardContent  >
+                      <div className=" space-y-2 text-muted-foreground">
                         <p>your.email@example.com</p>
                         <p>+36 phone number</p>
                         <p>Budapest (?), HU</p>
@@ -150,151 +152,49 @@ export default function Portfolio() {
                 </div>
               </div>
             </section>
-
             {/* Project A Section */}
-            <section id="project-a" className="min-h-screen justify-end">
-              <div className="max-w-4xl mx-auto">
-                <div className="w-full">
-                  <h2 className="text-4xl lg:text-6xl font-bold flex flex-row justify-between">
-                     <CardIcon src="/nori-portfolio/elemek/elem_2.png" alt="" />                    
-                    ÆLTER ÆGO
-                  </h2>
-                </div>
-                <div className="flex justify-end"> 
-                  <Card>
-                    <CardContent>
-                      <div className="aspect-video bg-muted rounded-lg mb-6 flex items-center justify-center">
-                        <Carousel 
-                        imagesPath="/nori-portfolio/images/projects/alterego/"
-                        imageNameFormat="alterego" 
-                        totalImages={11} 
-                        />
-                      </div>
-                      <p className="text-muted-foreground leading-relaxed mb-6">
-                        short description
-                      </p>
-                      <div className="flex flex-wrap gap-2 mb-6">
-                        {["key word", "key word2", "key word3"].map((tech) => (
-                          <span key={tech} className="font-mono px-3 py-1 bg-accent text-accent-foreground rounded-full text-sm">
-                            {tech}
-                          </span>
-                        ))}
-                      </div>
-                    </CardContent>
-                  </Card>
-                </div>
-                
-              </div>
-            </section>
+            <ProjectCard 
+              projectId="project-a"
+              iconPath="/nori-portfolio/elemek/elem_2.png"
+              title ="ÆLTER ÆGO"
+              imagePath = "/nori-portfolio/images/projects/alterego/"
+              imageNameFormat= "alterego"
+              totalImages = {11}
+            />
 
             {/* Project B Section */}
-            <section id="project-b" className="min-h-screen jusftify-end">
-              <div className="max-w-4xl mx-auto">
-                <div className="w-full">
-                  <h2 className="text-4xl lg:text-6xl font-bold flex flex-row justify-between">
-                    <CardIcon src="/nori-portfolio/elemek/elem_3.png" alt=""/>
-                    Starshaped
-                  </h2>
-                </div>
-                <div className="flex justify-end">
-                  <Card>
-                    <CardContent>
-                      <div className="aspect-video bg-muted rounded-lg mb-6 flex items-center justify-center">
-                        <Carousel 
-                        imagesPath="/nori-portfolio/images/projects/starshaped/"
-                        imageNameFormat="starshaped" 
-                        totalImages={7} 
-                        />                      
-                      </div>
-                      <p className="text-muted-foreground leading-relaxed mb-6">
-                      xx
-                      </p>
-                      <div className="flex flex-wrap gap-2 mb-6">
-                        {["keyword", "keyword2", "keyword3"].map((tech) => (
-                          <span key={tech} className="px-3 py-1 bg-accent text-accent-foreground rounded-full text-sm">
-                            {tech}
-                          </span>
-                        ))}
-                      </div>
-                    </CardContent>
-                  </Card>
-                </div>
-              </div>
-            </section>
+            <ProjectCard 
+              projectId="project-b"
+              iconPath="/nori-portfolio/elemek/elem_3.png"
+              title ="Starshaped"
+              imagePath = "/nori-portfolio/images/projects/starshaped/"
+              imageNameFormat= "starshaped"
+              totalImages = {7}
+            />
 
             {/* Project C Section */}
-            <section id="project-c" className="min-h-screen jusftify-end mb-6">
-              <div className="max-w-4xl mx-auto">
-                <div className="w-full">
-                  <h2 className="text-4xl lg:text-6xl font-bold flex flex-row justify-between">
-                    <CardIcon src="/nori-portfolio/elemek/elem_4.png" alt=""/>
-                    Street Photography
-                  </h2>
-                </div>
-                <div className="flex justify-end">
-                  <Card>
-                    <CardContent>
-                      <div className="aspect-video bg-muted rounded-lg mb-6 flex items-center justify-center">
-                        <Carousel 
-                        imagesPath="/nori-portfolio/images/projects/street_photography/"
-                        imageNameFormat="street_photo_" 
-                        totalImages={15}
-                        />
-                      </div>
-                      <p className="text-muted-foreground leading-relaxed mb-6">
-                        xx
-                      </p>
-                      <div className="flex flex-wrap gap-2 mb-6">
-                        {["keyword", "keyword2", "keyword3"].map((tech) => (
-                          <span key={tech} className="px-3 py-1 bg-accent text-accent-foreground rounded-full text-sm">
-                            {tech}
-                          </span>
-                        ))}
-                      </div>
-                    </CardContent>
-                  </Card>
-                </div>
-              </div>
-            </section>
+            <ProjectCard 
+              projectId="project-c"
+              iconPath="/nori-portfolio/elemek/elem_4.png"
+              title ="Street Photography"
+              imagePath = "/nori-portfolio/images/projects/street_photography/"
+              imageNameFormat= "street_photo_"
+              totalImages = {15}
+            />
 
             {/* Project D Section */}
-            <section id="project-d" className="min-h-screenjustify-end">
-              <div className="max-w-4xl mx-auto">
-                <div className="w-full">
-                  <h2 className="text-4xl lg:text-6xl font-bold flex flex-row justify-between">
-                    <CardIcon src="/nori-portfolio/elemek/elem_5.png" alt=""/>
-                    Tour de LFW
-                  </h2>
-                </div>
-                <div className="flex justify-end">
-                  <Card>
-                    <CardContent>
-                      <div className="aspect-video bg-muted rounded-lg mb-6 flex items-center justify-center">
-                      <Carousel 
-                        imagesPath="/nori-portfolio/images/projects/tour_de_LFW/"
-                        imageNameFormat="tour_de_LFW_" 
-                        totalImages={22}
-                        format='jpeg'
-                        /> 
-                      </div>
-                      <p className="text-muted-foreground leading-relaxed mb-6">
-                        xxx
-                      </p>
-                      <div className="flex flex-wrap gap-2 mb-6">
-                        {["kérdés", "kérdés2", "kérdés3"].map((tech) => (
-                          <span key={tech} className="px-3 py-1 bg-accent text-accent-foreground rounded-full text-sm">
-                            {tech}
-                          </span>
-                        ))}
-                      </div>
-                    </CardContent>
-                  </Card>
-                </div>
-              </div>
-            </section>
+            <ProjectCard 
+              projectId="project-d"
+              iconPath="/nori-portfolio/elemek/elem_5.png"
+              title ="Tour de LFW"
+              imagePath = "/nori-portfolio/images/projects/tour_de_LFW/"
+              imageNameFormat= "tour_de_LFW_"
+              totalImages = {22}
+              format='jpeg'
+            />
           </div>
         </div>
-      </div>
+      </div>  
     </div>
   )
 }
