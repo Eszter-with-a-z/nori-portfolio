@@ -176,6 +176,7 @@ export function ProjectCard({
                 imagesPath={imagePath}
                 imageNameFormat = {imageNameFormat}
                 totalImages={totalImages} 
+                format={format}
                 />
               </div>
               <div className="flex flex-wrap gap-2 mb-6">
